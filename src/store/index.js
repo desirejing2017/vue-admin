@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import * as actions from './actions'
 import * as getters from './getters'
 import userinfo from './modules/userinfo'
+import loading from './modules/loading'
+import router from './modules/router'
 
 Vue.use(Vuex)
 
@@ -12,7 +14,9 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    userinfo
+    userinfo,
+    loading,
+    router
   },
   strict: debug
 })

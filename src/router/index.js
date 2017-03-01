@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '../components/Modules/Login/Login.vue'
+import Login from '../components/Modules/Login/Login'
+import Home from '../components/Routerview/Home'
+import Content from '../components/Routerview/Content'
+import NotFound from '../components/Routerview/NotFound'
+import UserList from '../components/Modules/User/List'
 
 Vue.use(Router)
 
@@ -17,6 +21,45 @@ const routes = [
     name: '登录',
     component: Login,
     hidden: true
+  },
+  {
+    path: '/404',
+    component: Home,
+    hidden: true,
+    children: [{
+      path: '',
+      component: NotFound
+    }]
+  },
+  {
+    path: '/module',
+    name: '内容模块',
+    icon: 'inbox',
+    component: Home,
+    children: [{
+      path: '',
+      redirect: to => {
+        return 'user'
+      }
+    },
+    {
+      path: 'user',
+      name: '用户管理',
+      icon: 'inbox',
+      component: Content,
+      children: [{
+        path: '',
+        redirect: to => {
+          return 'list'
+        }
+      },
+      {
+        path: 'list',
+        name: '用户列表',
+        icon: 'reorder',
+        component: UserList
+      }]
+    }]
   }
 ]
 
