@@ -15,15 +15,6 @@ const getters = {
 
 // actions
 const actions = {
-  // login ({ commit, state }, loginData) {
-  //   UserApi.login.call(this, loginData, data => {
-  //     commit(types.UPDATE_USERINFO, {
-  //       userinfo: data.userinfo
-  //     }).then(() => {
-  //       this.$router.push('/demo/user/list')
-  //     })
-  //   })
-  // },
   update_userinfo: ({commit}, {
     userinfo
   }) => {
@@ -48,7 +39,6 @@ const actions = {
 const mutations = {
   [types.UPDATE_USERINFO] (state, userDb) {
     state.userinfo = userDb.userinfo || {}
-    console.log(state.userinfo)
     store.set('userinfo', state.userinfo)
   },
 

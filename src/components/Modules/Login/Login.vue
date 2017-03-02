@@ -50,7 +50,6 @@ export default {
     login (ref) {
       this.$refs[ref].validate((valid) => {
         if (valid) {
-          // this.$store.dispatch('login', this[ref])
           UserApi.login.call(this, this[ref], data => {
             // console.log(data);
             this.$store.dispatch('update_userinfo', {

@@ -8,3 +8,7 @@ export const HIDE_LOADING = 'HIDE_LOADING'  // 关闭加载
 
 // 设置当前路由
 export const SET_CUR_ROUTE = 'SET_CUR_ROUTE'
+
+// 左侧菜单
+export const SET_MENU_OPEN = 'SET_MENU_OPEN'  // 展开菜单
+export const SET_MENU_CLOSE = 'SET_MENU_CLOSE'  // 关闭菜单

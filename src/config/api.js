@@ -58,7 +58,6 @@ let user = {
    * @param {function} fn 成功回调
    */
   login (data, fn) {
-    console.log(data)
     ajax.call(this, 'post', '/Login/login', data, fn, true)
   },
 

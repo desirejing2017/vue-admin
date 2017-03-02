@@ -18,7 +18,6 @@
     methods: {
     },
     mounted () {
-
     },
     created () {
       // console.log(this.$route);

@@ -34,9 +34,9 @@ const routes = [
   {
     path: '/module',
     name: '内容模块',
-    icon: 'inbox',
     component: Home,
     children: [{
+      hidden: true,
       path: '',
       redirect: to => {
         return 'user'
@@ -49,6 +49,7 @@ const routes = [
       component: Content,
       children: [{
         path: '',
+        hidden: true,
         redirect: to => {
           return 'list'
         }

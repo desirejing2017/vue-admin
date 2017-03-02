@@ -4,8 +4,11 @@
       <el-col :span="4" class='logo-container'>
         <img src="../../assets/logo.png" class='logo' alt="">
       </el-col>
+      <el-col :span="16">
+        &nbsp
+      </el-col>
       <el-col :span="4" class="userinfo">
-        <span class='username'><i class='fa fa-user'></i>{{headerCurRouter}}</span>
+        <!-- <span class='username'><i class='fa fa-user'></i>{{headerCurRouter}}</span> -->
         <span class='username'>
           <el-dropdown trigger="click">
             <span class="el-dropdown-link">
@@ -18,7 +21,7 @@
             </el-dropdown-menu>
           </el-dropdown>
         </span>
-        <i class="el-icon-setting" @click='logout'></i>
+        <i class="el-icon-setting logout" @click='logout'></i>
       </el-col>
      </el-row>
   </header>

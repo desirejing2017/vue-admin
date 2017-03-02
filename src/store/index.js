@@ -2,9 +2,10 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import * as actions from './actions'
 import * as getters from './getters'
-import userinfo from './modules/userinfo'
+import user from './modules/userinfo'
 import loading from './modules/loading'
 import router from './modules/router'
+import leftmenu from './modules/leftmenu'
 
 Vue.use(Vuex)
 
@@ -14,9 +15,10 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    userinfo,
+    user,
     loading,
-    router
+    router,
+    leftmenu
   },
   strict: debug
 })

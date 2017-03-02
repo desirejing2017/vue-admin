@@ -2,10 +2,10 @@
   <div class="home">
     <head-nav></head-nav>
     <div class="left-fixed-right-auto">
-      <!-- <left-menu></left-menu> -->
-      <div class="right-content">
+      <left-menu></left-menu>
+      <div class="right-content" :style="{marginLeft:menu_width}">
         <div class="content">
-          <!-- <bread></bread> -->
+          <bread></bread>
           <router-view></router-view>
         </div>
       </div>
@@ -14,27 +14,30 @@
 </template>
 <script>
   import HeadNav from '../Common/HeadNav.vue'
-  // import Bread from '../Common/Bread'
-  // import Leftmenu from '../Common/LeftMenu'
+  import Bread from '../Common/Bread'
+  import LeftMenu from '../Common/LeftMenu'
+  import {mapGetters} from 'vuex'
   export default {
     name: 'home',
+    computed: mapGetters({
+      menu_width: 'menu_width'
+    }),
     components: {
-      HeadNav
-      // Bread,
-      // Leftmenu
+      HeadNav,
+      Bread,
+      LeftMenu
     }
   }
 
 </script>
 <style scoped lang='less'>
-  .content{
-    margin-top: 60px;
-    /*background: #f1f2f7;*/
-    background: #FFF;
-    padding: 16px;
-  }
   .right-content{
-    margin-bottom: 60px;
+    padding: 60px 0;
+    .content{
+      padding: 16px;
+      background: #FFF;
+    }
   }
+
 </style>
 
