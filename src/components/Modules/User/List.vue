@@ -155,7 +155,6 @@ export default {
   data () {
     return {
       user_list: [], // 用户列表数组
-
       batch_id: '', // 批量删除时这是多个用逗号隔开的id字符串
       batch_flag: true, // 符合批量删除为true,否则为false
 
@@ -243,9 +242,7 @@ export default {
      */
     onSearch () {
       // console.log(this.search_data);
-
       var sd = {}
-
       var query = this.$route.query
       for (var p in query) {
         sd[p] = query[p]
@@ -291,9 +288,7 @@ export default {
     setPath (field, value) {
       var path = this.$route.path
       var query = Object.assign({}, this.$route.query)
-
       query[field] = value
-
       this.$router.push({
         path: path,
         query: query
