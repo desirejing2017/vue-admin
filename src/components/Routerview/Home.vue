@@ -1,13 +1,11 @@
 <template>
   <div class="home">
     <head-nav></head-nav>
-    <div class="left-fixed-right-auto">
-      <left-menu></left-menu>
-      <div class="right-content" :style="{marginLeft:menu_width}">
-        <div class="content">
-          <bread></bread>
-          <router-view></router-view>
-        </div>
+    <left-menu></left-menu>
+    <div class="right-content" :style="{marginLeft:menu_width}">
+      <div class="content">
+        <bread></bread>
+        <router-view></router-view>
       </div>
     </div>
   </div>
@@ -38,6 +36,5 @@
       background: #FFF;
     }
   }
-
 </style>
 

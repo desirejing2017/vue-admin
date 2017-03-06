@@ -10,11 +10,9 @@
 </script>
 
 <style scoped lang='less'>
-  .fade-enter-active,
-  .fade-leave-active {
+  .fade-enter-active{
     transition: opacity .3s
   }
-  
   .fade-enter,
   .fade-leave-active {
     opacity: 0

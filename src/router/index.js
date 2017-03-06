@@ -5,6 +5,7 @@ import Home from '../components/Routerview/Home'
 import Content from '../components/Routerview/Content'
 import NotFound from '../components/Routerview/NotFound'
 import UserList from '../components/Modules/User/List'
+import UserEdit from '../components/Modules/User/Edit'
 
 Vue.use(Router)
 
@@ -59,6 +60,13 @@ const routes = [
         name: '用户列表',
         icon: 'reorder',
         component: UserList
+      },
+      {
+        path: 'edit',
+        hidden: true,
+        name: '编辑用户',
+        icon: 'edit',
+        component: UserEdit
       }]
     }]
   }
