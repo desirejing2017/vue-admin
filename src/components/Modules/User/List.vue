@@ -22,6 +22,7 @@
         </el-form-item>
       </el-form>
     </el-col>
+
     <el-table border style="width: 100%" align='center' :data="user_list" @selection-change='onSelectionChange'>
       <el-table-column type="selection" width="55"></el-table-column>
       <el-table-column prop="username" label="姓名" align="center" width="150" :sortable="true"></el-table-column>
@@ -36,7 +37,7 @@
           <el-button type="info" icon='edit' size="mini" @click='onEditUser(scope.row)'></el-button>
           <el-button type="danger" icon='delete' size="mini" @click='onDeleteUser(scope.row,scope.$index,user_list)'></el-button>
         </template>
-    </el-table-column>
+      </el-table-column>
     </el-table>
 
     <el-dialog title="用户信息" v-model="dialog.show" size="tiny">
@@ -284,9 +285,9 @@ export default {
      */
     onEditUser (user) {
       if (user && user.id) {
-        this.$router.push('/module/user/edit?id=' + user.id)
+        this.$router.push('/user/edit?id=' + user.id)
       } else {
-        this.$router.push('/module/user/edit')
+        this.$router.push('/user/edit')
       }
     },
 

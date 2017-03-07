@@ -134,6 +134,44 @@ let user = {
   }
 }
 
+let article = {
+  /**
+   * 查看用户列表
+   * @param  {object}   data 参数
+   * @param  {Function} fn   成功回调
+   */
+  selectArticle (data, fn) {
+    ajax.call(this, 'get', '/Article/selectArticle', data, fn)
+  },
+
+  /**
+   * 添加修改公用接口
+   * @param  {object}   data 参数
+   * @param  {Function} fn   成功回调
+   */
+  saveArticle (data, fn) {
+    ajax.call(this, 'post', '/Article/saveArticle', data, fn)
+  },
+
+  /**
+   * 删除文章
+   * @param  {object}   data 参数
+   * @param  {Function} fn   成功回调
+   */
+  deleteArticle (data, fn) {
+    ajax.call(this, 'post', '/Article/deleteArticle', data, fn)
+  },
+
+  /**
+   * 获取文章
+   * @param  {object}   data 参数
+   * @param  {Function} fn   成功回调
+   */
+  findArticle (data, fn) {
+    ajax.call(this, 'get', '/Article/findArticle', data, fn)
+  }
+}
+
 /**
  * 导出所有模块需要用到接口
  * 一级属性：模块名
@@ -141,5 +179,5 @@ let user = {
  * @type {Object}
  */
 
-export {user}
+export {user, article}
 

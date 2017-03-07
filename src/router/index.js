@@ -6,17 +6,12 @@ import Content from '../components/Routerview/Content'
 import NotFound from '../components/Routerview/NotFound'
 import UserList from '../components/Modules/User/List'
 import UserEdit from '../components/Modules/User/Edit'
+import ArticleList from '../components/Modules/Article/List'
+import ArticleEdit from '../components/Modules/Article/Edit'
 
 Vue.use(Router)
 
 const routes = [
-  {
-    path: '/',
-    redirect: to => {
-      return 'login'
-    },
-    hidden: true
-  },
   {
     path: '/login',
     name: '登录',
@@ -33,8 +28,8 @@ const routes = [
     }]
   },
   {
-    path: '/module',
-    name: '内容模块',
+    path: '/',
+    name: '首页',
     component: Home,
     children: [{
       hidden: true,
@@ -67,6 +62,33 @@ const routes = [
         name: '编辑用户',
         icon: 'edit',
         component: UserEdit
+      }]
+    },
+    {
+      path: 'article',
+      name: '文章管理',
+      icon: 'inbox',
+      component: Content,
+      children: [{
+        path: '',
+        hidden: true,
+        redirect: to => {
+          return 'list'
+        }
+      },
+      {
+        path: 'list',
+        icon: 'reorder',
+        name: '文章列表',
+        component: ArticleList
+      },
+      {
+        path: 'edit',
+        icon: 'edit',
+        hidden: true,
+        name: '编辑文章',
+        component: ArticleEdit
+
       }]
     }]
   }

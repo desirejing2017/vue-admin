@@ -26,7 +26,6 @@
       LeftMenu
     }
   }
-
 </script>
 <style scoped lang='less'>
   .right-content{

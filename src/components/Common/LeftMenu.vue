@@ -3,7 +3,7 @@
     <div id='left-menu'>
       <el-row class='tac'
         v-for="(route,index) in $router.options.routes" 
-        v-if='!route.hidden && $route.matched.length && $route.matched[0].path===route.path'>
+        v-if='!route.hidden && $route.matched.length'>
         <el-col :span="24">
           <el-menu 
             class="el-menu-vertical-demo" 
@@ -80,6 +80,7 @@
       },
 
       updateCurMenu (routeInfo) {
+        console.log(this.$router.options.routes)
         let route = routeInfo || this.$route
         if (route.matched.length) {
           let rootPath = route.matched[0].path

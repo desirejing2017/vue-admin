@@ -55,7 +55,7 @@ export default {
             this.$store.dispatch('update_userinfo', {
               userinfo: data.userinfo
             }).then(() => {
-              this.$router.push('/module/user/list')
+              this.$router.push('/user/list')
             })
           })
         }

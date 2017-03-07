@@ -100,7 +100,7 @@ export default {
       this.$refs[userdata].validate((valid) => {
         if (valid) {
           UserApi.saveUser.call(this, this[userdata], data => {
-            this.$router.push('/module/user/list')
+            this.$router.push('/user/list')
           })
         }
       })
