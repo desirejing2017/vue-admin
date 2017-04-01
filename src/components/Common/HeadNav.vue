@@ -146,7 +146,7 @@
         switch (cmditem) {
           case 'info':
             this.$router.push({
-              path: '/module/user/edit',
+              path: '/user/edit',
               query: {
                 id: this.$store.state.user.userinfo.id
               }
